@@ -1,0 +1,30 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+ 
+<h1>question paper</h1>
+<% count=0 %>
+
+
+<% @temp.each do |my_question| %>
+
+
+<div class="entry">
+	 
+<h3><%= my_question.question %></h3>
+<h4><%= radio_button_tag(:option_a, "option_a") %>
+<%= label_tag(:option_a_label, my_question.option_a) %> </h4>
+
+<h4><%= radio_button_tag(:option_b, "option_b") %>
+<%= label_tag(:option_b_label, my_question.option_b) %> </h4>
+
+<h4><%= radio_button_tag(:option_c, "option_c") %>
+<%= label_tag(:option_c_label, my_question.option_c) %> </h4>
+
+<h4><%= radio_button_tag(:option_d, "option_d") %>
+<%= label_tag(:option_d_label, my_question.option_d) %> </h4>
+</div>
+<% end %>
+
+<%= will_paginate @temp %>
+

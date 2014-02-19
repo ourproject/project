@@ -1,0 +1,31 @@
+<h1>Listing Questions</h1>
+
+<table>
+  <thead>
+    
+ 
+  </thead>
+
+  <tbody>
+    <% @my_questions.each do |my_question| %>
+        <tr><td><b>Question: <%= my_question.question %></td></tr>
+        <tr><td><b>Option a: <%= my_question.option_a %></td></tr>
+        <tr><td><b>Option b: <%= my_question.option_b %></td></tr>
+        <tr><td><b>Option c: <%= my_question.option_c %></td></tr>
+        <tr><td><b>Option d: <%= my_question.option_d %></td></tr>
+        <tr><td><b>Anwser: <%= my_question.anwser %></td></tr>
+        <tr><td><b>Question type: <%= my_question.question_type %></td></tr>
+        <tr><td><b>Created by: <%= my_question.created_by %></td></tr>
+        <tr><td><b>Difficulty level:<%= my_question.difficulty_level %></td></tr>
+        <tr><td><%= link_to 'Show', my_question %></td></tr>
+        <tr><td><%= link_to 'Edit', edit_my_question_path(my_question) %></td></tr>
+        
+        <td><%= button_to 'Destroy', my_question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      
+    <% end %>
+  </tbody>
+</table>
+
+</br>
+
+<%= link_to 'New Question', new_my_question_path %>

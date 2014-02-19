@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Question:</strong>
+  <%= @my_question.question %>
+</p>
+
+<p>
+  <strong>Option a:</strong>
+  <%= @my_question.option_a %>
+</p>
+
+<p>
+  <strong>Option b:</strong>
+  <%= @my_question.option_b %>
+</p>
+
+<p>
+  <strong>Option c:</strong>
+  <%= @my_question.option_c %>
+</p>
+
+<p>
+  <strong>Option d:</strong>
+  <%= @my_question.option_d %>
+</p>
+
+<p>
+  <strong>Answer:</strong>
+  <%= @my_question.anwser %>
+</p>
+
+<p>
+  <strong>Question type:</strong>
+  <%= @my_question.question_type %>
+</p>
+
+<p>
+  <strong>Created by:</strong>
+  <%= @my_question.created_by %>
+</p>
+
+<p>
+  <strong>Difficulty level:</strong>
+  <%= @my_question.difficulty_level %>
+</p>
+
+<%= link_to 'Edit', edit_my_question_path(@my_question) %> |
+<%= link_to 'Back', my_questions_path %>

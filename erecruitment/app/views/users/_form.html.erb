@@ -1,0 +1,50 @@
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :role %><br>
+    <%= f.select :role, User::USER_ROLE,
+        prompt: 'Select User type/role' %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, size: 40 %>
+  </div>
+  <div class="field">
+    <%= f.label :email_id %><br>
+    <%= f.email_field :email_id, size: 40 %>
+  </div>
+  <div class="field">
+    <%= f.label :password, 'Password' %><br>
+    <%= f.password_field :password, size: 40 %>
+  </div>
+  <div>
+    <%= f.label :password_confirmation, 'Confirm' %><br />
+    <%= f.password_field :password_confirmation, size: 40 %>
+  </div>
+  <div class="field">
+    <%= f.label :date_of_birth %><br>
+    <%= f.text_field :date_of_birth %>
+  </div>
+  <div class="field">
+    <%= f.label :qualification %><br>
+    <%= f.text_field :qualification %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br>
+    <%= f.text_field :address, row: 3,cols: 40 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
