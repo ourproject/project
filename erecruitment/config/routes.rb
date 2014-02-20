@@ -1,5 +1,8 @@
 Erecruitment::Application.routes.draw do
 
+  get "candidates/index"
+  get "candidates/show_tests"
+  get "candidate/index"
   get "organization/index"
   resources :tests
 

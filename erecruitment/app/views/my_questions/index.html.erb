@@ -17,8 +17,8 @@
         <tr><td><b>Question type: <%= my_question.question_type %></td></tr>
         <tr><td><b>Created by: <%= my_question.created_by %></td></tr>
         <tr><td><b>Difficulty level:<%= my_question.difficulty_level %></td></tr>
-        <tr><td><%= link_to 'Show', my_question %></td></tr>
-        <tr><td><%= link_to 'Edit', edit_my_question_path(my_question) %></td></tr>
+        <tr><td><%= button_to 'Show', my_question, :method =>"get" %></td></tr>
+        <tr><td><%= button_to 'Edit', edit_my_question_path(my_question), :method =>"get" %></td></tr>
         
         <td><%= button_to 'Destroy', my_question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       

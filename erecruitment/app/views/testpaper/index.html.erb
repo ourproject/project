@@ -26,9 +26,17 @@
 <%= label_tag(:option_d_label, my_question.option_d) %> </h4>
 </div>
 
-
-<%= @marks_obtained %>
 <% end %>
 
-<%= will_paginate @temp %>
+<% next_q =((@temp.total_pages == @temp.current_page) ? '' : 'next') %>
+
+<%= will_paginate @temp, :next_label => next_q %>
+
+<% if((@temp.total_pages == @temp.current_page)) %>
+	<div>
+		<%= button_to 'Submit test', candidates_index_path, :method => "get" %>
+	</div>
+<% end %>
+
+
 

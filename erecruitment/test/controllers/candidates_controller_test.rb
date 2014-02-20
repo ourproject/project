@@ -6,4 +6,9 @@ class CandidatesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should get show_tests" do
+    get :show_tests
+    assert_response :success
+  end
+
 end
