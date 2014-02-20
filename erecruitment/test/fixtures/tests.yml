@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  set_by: MyString
+  number_of_questions: 1
+  duration: 1
+  cutoff: 1
+
+two:
+  set_by: MyString
+  number_of_questions: 1
+  duration: 1
+  cutoff: 1

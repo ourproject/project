@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Set by:</strong>
+  <%= @test.set_by %>
+</p>
+
+<p>
+  <strong>Number of questions:</strong>
+  <%= @test.number_of_questions %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= @test.duration %>
+</p>
+
+<p>
+  <strong>Cutoff:</strong>
+  <%= @test.cutoff %>
+</p>
+
+<%= link_to 'Edit', edit_test_path(@test) %> |
+<%= link_to 'Back', tests_path %>
