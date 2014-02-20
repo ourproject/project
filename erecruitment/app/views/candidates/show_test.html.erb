@@ -1,0 +1,33 @@
+<h1>Availlable tests</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Test Name</th>
+      <th>No. of Questions</th>
+      <th>Duration</th>
+      <th>Cutoff</th>
+      <th></th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tests.each do |test| %>
+      <tr>
+        <% t_name=test.set_by %>
+        <% t_name=t_name.upcase+" Aptitude Test" %>
+        <td><%= t_name %></td>
+        <td><%= test.number_of_questions %></td>
+        <td><%= test.duration+" mins" %></td>
+        <td><%= test.cutoff %></td>
+        <td><%= link_to 'Start Test', testpaper_url %></td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+

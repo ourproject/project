@@ -3,9 +3,8 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    sql="select * from users where role='Candidate'"
-    @users = User.paginate_by_sql(sql, :page =>params[:page],
-                           :per_page => 1)
+
+    @users = User.all
                            
     respond_to do |format|
       format.html # index.html.erb

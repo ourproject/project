@@ -7,13 +7,14 @@ module WillPaginate::ViewHelpers
       :inner_window => 2, # links around the current page
       :outer_window => -1, # links around beginning and end
       :limit        => 5,
-      :separator    => ' ', # single space is friendly to spiders and non-graphic browsers
+      :separator    => '   ', # single space is friendly to spiders and non-graphic browsers
       :param_name   => :page,
       :params       => nil,
       :gap          => "...",
       :renderer     => '::PaginationListLinkRenderer',
-      :page_links   => true,
+      :page_links   => false,
       :container    => true
     }
     mattr_reader :pagination_options
 end
+

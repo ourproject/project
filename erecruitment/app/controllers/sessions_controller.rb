@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 	if user && user.password==params[:password]
 		if user.role=="Organisation"
 			session[:user_id]=user.id
-			redirect_to admin_url
+			redirect_to organization_index_url
 		else
 			if user.role=="Candidate"
 				session[:user_id]=user.id
