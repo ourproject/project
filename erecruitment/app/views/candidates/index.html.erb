@@ -6,3 +6,6 @@
 <%= link_to 'Give Demo Test', testpaper_index_url(:test_owner => "admin") %>
 <br>
 <%= link_to 'Check Available Tests', candidates_show_tests_path %>
+<div>
+	<%= button_to 'Logout', logout_path, :method =>"delete" %>
+</div>
