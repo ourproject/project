@@ -34,8 +34,8 @@
 
 <% if((@temp.total_pages == @temp.current_page)) %>
 	<div>
-		<%= Ntification.test_complete(@user).deliver
-		<%= button_to 'Submit test', candidates_index_path, :method => "get",\ %>
+		<%= Notification.test_complete(@user).deliver %>
+		<%= button_to 'Submit test', candidates_index_path, :method => "get" %>
 	</div>
 <% end %>
 

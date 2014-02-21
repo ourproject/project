@@ -4,7 +4,6 @@ class TestpaperController < ApplicationController
   	#@temp=My_question.find_by_question_type("demo").paginate(:page => params[:page], :per_page => 1)
   	@marks_obtained=0
     test_type=params[:test_owner]
-    @user=User.find(session[:id])
   	sql="select * from my_questions where created_by='"+test_type+"'"
     @temp = My_question.paginate_by_sql(sql, :page =>params[:page], :per_page => 1,  :previous_label => '')
     end
