@@ -45,6 +45,7 @@ end
 
     respond_to do |format|
       if @user.save
+        Notification.registration(@user).deliver
         format.html { redirect_to login_url,
  notice: 'User #{@user.name} was successfully created.' }
         format.json { render json: @user, status: :created, location: @user }
