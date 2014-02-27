@@ -1,34 +1,27 @@
 <h1>Listing Questions</h1>
 
-<table>
-  <thead>
-    
- 
-  </thead>
+<%= link_to 'New Question', new_my_question_path %>
 
-  <tbody>
+<%= button_to 'Logout', logout_path, :method =>"delete" %>
+</br>
+<%= will_paginate @posts %>
+</br>
     <% @my_questions.each do |my_question| %>
-        <tr><td><b>Question: <%= my_question.question %></td></tr>
-        <tr><td><b>Option a: <%= my_question.option_a %></td></tr>
-        <tr><td><b>Option b: <%= my_question.option_b %></td></tr>
-        <tr><td><b>Option c: <%= my_question.option_c %></td></tr>
-        <tr><td><b>Option d: <%= my_question.option_d %></td></tr>
-        <tr><td><b>Anwser: <%= my_question.anwser %></td></tr>
-        <tr><td><b>Question type: <%= my_question.question_type %></td></tr>
-        <tr><td><b>Created by: <%= my_question.created_by %></td></tr>
-        <tr><td><b>Difficulty level:<%= my_question.difficulty_level %></td></tr>
-        <tr><td><%= button_to 'Show', my_question, :method =>"get" %></td></tr>
-        <tr><td><%= button_to 'Edit', edit_my_question_path(my_question), :method =>"get" %></td></tr>
-        
-        <td><%= button_to 'Destroy', my_question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <div1><b>Question:</b> <%= my_question.question %></div1></br>
+        <div2><b>Option a:</b> <%= my_question.option_a %></br>
+         <b>Option b:</b> <%= my_question.option_b %></br>
+        <b>Option c:</b> <%= my_question.option_c %></br>
+        <b>Option d:</b> <%= my_question.option_d %></br>
+        <b>Anwser:</b> <%= my_question.anwser %> <br>
+       <b>Question type:</b> <%= my_question.question_type %></br>
+              <b>Created by:</b> <%= my_question.created_by %></br>
+              <b>Difficulty level:</b><%= my_question.difficulty_level %></br>
+        <%= button_to 'Show', my_question, :method =>"get" %>
+        <%= button_to 'Edit', edit_my_question_path(my_question), :method =>"get" %>
+        <%= button_to 'Destroy', my_question, method: :delete, data: { confirm: 'Are you sure?' } %></div2>
+      </br></br>
       
     <% end %>
-  </tbody>
-</table>
-
+  
 </br>
-
-<%= link_to 'New Question', new_my_question_path %>
-<div>
-  <%= button_to 'Logout', logout_path, :method =>"delete" %>
-</div>
+<%= will_paginate @posts %>
