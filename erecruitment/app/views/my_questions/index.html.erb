@@ -1,34 +1,30 @@
-<h1>Listing Questions</h1>
+<h2>Listing Questions </h2>
 
-<table>
-  <thead>
-    
- 
-  </thead>
-
-  <tbody>
+<%= will_paginate @posts %>
+</br>
     <% @my_questions.each do |my_question| %>
-        <tr><td><b>Question: <%= my_question.question %></td></tr>
-        <tr><td><b>Option a: <%= my_question.option_a %></td></tr>
-        <tr><td><b>Option b: <%= my_question.option_b %></td></tr>
-        <tr><td><b>Option c: <%= my_question.option_c %></td></tr>
-        <tr><td><b>Option d: <%= my_question.option_d %></td></tr>
-        <tr><td><b>Anwser: <%= my_question.anwser %></td></tr>
-        <tr><td><b>Question type: <%= my_question.question_type %></td></tr>
-        <tr><td><b>Created by: <%= my_question.created_by %></td></tr>
-        <tr><td><b>Difficulty level:<%= my_question.difficulty_level %></td></tr>
-        <tr><td><%= button_to 'Show', my_question, :method =>"get" %></td></tr>
-        <tr><td><%= button_to 'Edit', edit_my_question_path(my_question), :method =>"get" %></td></tr>
-        
-        <td><%= button_to 'Destroy', my_question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <div class="entry">
+          <h2><b>Question: <%= my_question.question %></b></h2></br>
+           <div class="option">
+            <span class="answer">
+              <b>Option a: <%= my_question.option_a %></b></br>
+              <b>Option b: <%= my_question.option_b %></b></br>
+              <b>Option c: <%= my_question.option_c %></b></br>
+              <b>Option d: <%= my_question.option_d %></b></br>
+              <b>Anwser: <%= my_question.anwser %></b><br>
+              <b>Question type: <%= my_question.question_type %></b></br>
+              <b>Created by: <%= my_question.created_by %></b></br>
+              <b>Difficulty level:<%= my_question.difficulty_level %></b></br></br>
+              <%= button_to 'Show', my_question, :method =>"get" , :class=> 'button' ,   :id=> 'button' %>
+              <%= button_to 'Edit', edit_my_question_path(my_question), :method =>"get" , :class=> 'button' ,   :id=> 'button' %>
+              <%= button_to 'Destroy', my_question, method: :delete, data: { confirm: 'Are you sure?' } , :class=> 'button' ,   :id=> 'button' %>
+            </span>
+          </div>
+          </div>
+      </br></br>
       
     <% end %>
-  </tbody>
-</table>
+  <%= link_to 'New Question', new_my_question_path , :class=> 'mylink' , :id=> 'mylink'%>
 
 </br>
-
-<%= link_to 'New Question', new_my_question_path %>
-<div>
-  <%= button_to 'Logout', logout_path, :method =>"delete" %>
-</div>
+<%= will_paginate @posts %>

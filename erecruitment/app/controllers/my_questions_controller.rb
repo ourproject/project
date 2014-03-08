@@ -2,7 +2,7 @@ class MyQuestionsController < ApplicationController
   #before_action :set_my_question, only: [:show, :edit, :update, :destroy]
 
   def index
-    @my_questions = My_question.all
+    @my_questions = My_question.paginate(:page => params[:page], :per_page => 7)
 
     respond_to do |format|
       format.html # index.html.erb

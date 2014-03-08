@@ -1,13 +1,23 @@
 
+<h1> Welcome!!! </h1>
 
-<h1> Welcome!!! <h1>
 
+<h3> This Online Demo Test is intended, to give experience of the navigation, look and feel of the online test to the applicants. Click Below link to give Demo Test. </h3>
+<h3>
+<%= link_to 'Give Demo Test', testpaper_index_url(:test_owner => "admin"), 
+   :class =>'mylink' %>
+</h3>
 
-<%= link_to 'Give Demo Test', testpaper_index_url(:test_owner => "admin") %>
-<br>
-<%= link_to 'Check Available Tests', candidates_show_tests_path %>
-<br>
-<%= link_to 'Check Test Results', candidates_show_results_path %>
-<div>
-	<%= button_to 'Logout', logout_path, :method =>"delete" %>
-</div>
+</br></br>
+<h3> According to your Submitted Profile, Following test are alloted to you.</br>
+  To check avilable Tests,Click the link Below. </h3>
+<h3>
+
+<h3>
+ <%= link_to 'Check Available Tests', candidates_show_tests_path , :class =>'mylink' %>
+</h3>
+
+</br></br>
+<h3>
+	<%= link_to 'Check Test Results', candidates_show_results_path %>
+</h3>
