@@ -1,13 +1,33 @@
 <!DOCTYPE html>
+
 <html>
 <head>
-  <title>Erecruitment</title>
- <%= stylesheet_link_tag "applications", :media => "all" %>
-<%= javascript_include_tag "applications" %>
-<%= csrf_meta_tags %>
+  <title>QUESTION_BANK</title>
+  <%= stylesheet_link_tag "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
 </head>
-<body class='<%= controller.controller_name %>'>
-<%= yield %>
+<body class="<%= controller.controller_name %>">
+	
+	<div id="banner"> 
+	<%= image_tag("abc.jpg", :alt => "rss feed") %>
+	<%= @page_title || "ERECRUITMENT" %> 
+	</div> 
+		<div id="columns"> 
+			<div id="side"> 
+			<ul> <h2><b>
+				<li><a href="http://www....">Home</a></li> </br>
+				<li><a href="http://www..../faq">About Us</a></li></br> 
+				<li><a href="http://www..../news">Logout</a></li> </br>
+				</b>
+			</h2>
+			</ul> 
+	    	</div> 
+	    	<div id="main"> 
+	    	<%= yield %> 
+	    	</div> 
+	    	
+	    </div> 
+	
 </body>
 </html>
-

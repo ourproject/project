@@ -1,3 +1,82 @@
-// Place all the styles related to the my_questions controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.my_questions 
+{ 
+background-color: #A9A9A9;
+color: black;
+
+h1
+{
+
+	padding-bottom: 2em;
+	font: 200% "Times New Roman" , bold;
+	color: #226;
+	
+}
+
+
+.entry
+{
+overflow: auto;
+margin-top: 1em; 
+border-bottom: 2px dotted black; 
+min-height: 100px; 
+
+h2
+{
+font-size: 140%;
+font-family: sans-serief;
+margin-left: 200px;
+margin-right: 100px;
+margin-top: 0;
+margin-bottom: 2px;
+color: #227;
+}
+
+p, div.option { 
+margin-left: 200px; 
+margin-top: 0.5em; 
+margin-bottom: 0.8em; 
+} 
+
+.answer{ 
+color: #44a; 
+font-weight: bold; 
+margin-right: 3em; 
+}
+
+}
+
+.button
+{
+  
+  width: 150px;
+  height: 30px;
+  background-repeat:no-repeat;
+  display:block;
+  float:left;
+  margin-left: 0em;
+  background-color: #008B00  ;
+  border:1px solid #dedede;
+  border-top:1px solid #eee;
+  border-left:1px solid #eee;
+  font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
+  font-size:12px;
+  line-height:130%;
+  text-decoration:none;
+  font-weight:bold;
+  font-color: #565656;
+  cursor:pointer;
+  padding:5px 10px 6px 7px;
+}
+
+a.mylink
+{
+font: 150% "Times New Roman" , bold;
+margin-left: 15em;
+color: navy;
+&:hover 
+{
+ color: blue;
+}
+}
+
+}

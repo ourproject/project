@@ -1,4 +1,5 @@
 class CandidatesController < ApplicationController
+	layout "candidatelayout"
   def index
   end
 

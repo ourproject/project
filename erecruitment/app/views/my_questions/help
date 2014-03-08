@@ -1,0 +1,28 @@
+# http://localhost:3000/tests/5678/questions/234
+
+class Answer... < ActionCOn
+
+	def create
+		#save params[:id]
+		test = Test.find(params[:test_id])
+		redirect_to tests_answer_path(test_id, next_answer_id)
+	end
+
+end
+
+
+class Question.. < Actoinlk
+
+	def show
+		@question = Question.find(params[:id])
+		@test = Test.find p... test_id
+		@answer = @test.answers.new
+	end
+
+end
+
+
+#show view
+
+form_for @answer
+

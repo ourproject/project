@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  
+
   # GET /users
   # GET /users.json
   def index
@@ -84,4 +84,7 @@ end
       format.json { head :no_content }
     end
   end
+  def view
+  render :layout => false
+end
 end
