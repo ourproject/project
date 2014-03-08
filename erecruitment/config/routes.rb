@@ -1,7 +1,11 @@
 Erecruitment::Application.routes.draw do
 
+  resources :answers
+
+  get "testpaper/test"
   get "candidates/index"
   get "candidates/show_tests"
+  get "candidates/show_results"
   get "candidate/index"
   get "organization/index"
   resources :tests
@@ -20,6 +24,8 @@ end
   get "testpaper/index"
 
   resources :my_questions
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

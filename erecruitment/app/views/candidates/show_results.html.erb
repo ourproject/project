@@ -1,0 +1,34 @@
+<h1>Test Results</h1>
+
+ <% @results.each do |result| %>
+
+ <h2><%= result.set_by %></h2>
+
+ <% if result.pass_or_fail=="pass" %>
+ <% remark="Congratulations!! You have passed the test.." %>
+ <% else %>
+ <% remark="Sorry.. you failed" %>
+ <% end %>
+<table border=1>
+	
+		<tr>
+			<th>Total No. of questions</th>
+			<th>Marks Obtained</th>
+			<th>Remark</th>
+			<th>Next stage</th>
+		</tr>
+	
+	<tr>
+		<td><%= result.number_of_questions.to_s %></td>
+		<td><%= result.marks.to_s %></td>
+		<td><%= remark %></td>
+		<td><% if result.pass_or_fail=="pass" %>
+			<%= link_to 'Start Interview', candidates_show_results_path %>
+			<% else %>
+			----
+			<% end %>
+		</td>
+	</tr>
+</table>
+
+<% end %>

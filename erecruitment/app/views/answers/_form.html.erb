@@ -1,0 +1,87 @@
+<%= form_for(@answer) do |f| %>
+  <% if @answer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@answer.errors.count, "error") %> prohibited this answer from being saved:</h2>
+
+      <ul>
+      <% @answer.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Question%><br>
+    <%= @current_question.question %>
+  </div>
+
+  <div class="field">
+    <%= radio_button_tag(:selected_option, @current_question.option_a) %>
+    <%= label_tag(:option_a_label, @current_question.option_a) %>
+  </div>
+
+  <div class="field">
+    <%= radio_button_tag(:selected_option, @current_question.option_b) %>
+    <%= label_tag(:option_b_label, @current_question.option_b) %>
+  </div>
+
+  <div class="field">
+    <%= radio_button_tag(:selected_option, @current_question.option_c) %>
+    <%= label_tag(:option_c_label, @current_question.option_c) %>
+  </div>
+
+  <div class="field">
+    <%= radio_button_tag(:selected_option, @current_question.option_d) %>
+    <%= label_tag(:option_d_label, @current_question.option_d) %>
+  </div>
+ 
+  <div class="actions">
+    <%= f.submit "Save & next" %>
+  </div>
+<% end %>
+
+
+
+
+
+
+<%
+=begin
+%>
+<% @temp.each do |my_question| %>
+
+
+<div class="entry">
+   
+<h3><%= my_question.question %></h3>
+<% qid=my_question.id %>
+<h4><%= radio_button_tag(:selected_option, "option_a") %>
+<%= label_tag(:option_a_label, my_question.option_a) %> </h4>
+
+<h4><%= radio_button_tag(:selected_option, "option_b") %>
+<%= label_tag(:option_b_label, my_question.option_b) %> </h4>
+
+<h4><%= radio_button_tag(:selected_option, "option_c") %>
+<%= label_tag(:option_c_label, my_question.option_c) %> </h4>
+
+<h4><%= radio_button_tag(:selected_option, "option_d") %>
+<%= label_tag(:option_d_label, my_question.option_d) %> </h4>
+</div>
+
+<% end %>
+
+<% next_q =((@temp.total_pages == @temp.current_page) ? '' : 'next') %>
+
+<%= will_paginate @temp, :next_label => next_q %>
+
+<% if((@temp.total_pages == @temp.current_page)) %>
+  <div>
+    <% Notification.test_complete(@user).deliver %>
+
+    <%= button_to 'Submit test', candidates_index_path, :method => "get" %>
+  </div>
+<% end %>
+<%
+=end
+%>

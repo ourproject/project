@@ -1,3 +1,2 @@
 module TestpaperHelper
-
 end

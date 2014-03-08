@@ -21,7 +21,7 @@
         <td><%= test.number_of_questions %></td>
         <td><%= test.duration.to_s+" mins" %></td>
         <td><%= test.cutoff %></td>
-        <td><%= link_to 'Start Test', testpaper_index_url(:test_owner => test.set_by) %></td>
+        <td><%= link_to 'Start Test', testpaper_test_url(:test_id => test.id , :question_id => -1) %></td>
         
       </tr>
     <% end %>

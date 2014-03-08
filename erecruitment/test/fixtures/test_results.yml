@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  test_id: MyString
+  user_id: MyString
+  marks: MyString
+  pass_or_fail: MyString
+  notification_status: MyString
+
+two:
+  test_id: MyString
+  user_id: MyString
+  marks: MyString
+  pass_or_fail: MyString
+  notification_status: MyString
